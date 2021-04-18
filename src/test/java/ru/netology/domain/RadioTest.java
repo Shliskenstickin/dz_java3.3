@@ -18,7 +18,7 @@ class RadioTest {
     void setNumberStationOverMax() {
         Radio tapok = new Radio();
 
-        tapok.setNumberStation(10);
+        tapok.setNumberStation(11);
         assertEquals(0, tapok.getNumberStation());
     }
 
@@ -42,7 +42,7 @@ class RadioTest {
     void nextLoop() {
         Radio tapok = new Radio();
 
-        tapok.setNumberStation(9);
+        tapok.setNumberStation(10);
         tapok.next();
         assertEquals(0, tapok.getNumberStation());
     }
@@ -69,17 +69,17 @@ class RadioTest {
         Radio tapok = new Radio();
 
         tapok.prev();
-        assertEquals(9, tapok.getNumberStation());
+        assertEquals(10, tapok.getNumberStation());
     }
 
     @Test
     void crossingPlusBorder() {
         Radio tapok = new Radio();
 
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 101; i++) {
             tapok.plus();
         }
-        assertEquals(10, tapok.getSoundVolume());
+        assertEquals(100, tapok.getSoundVolume());
     }
 
     @Test
@@ -97,5 +97,19 @@ class RadioTest {
 
         tapok.minus();
         assertEquals(0, tapok.getSoundVolume());
+    }
+
+    @Test
+    void setNewStationLimits() {
+        Radio tapok = new Radio(20, 200);
+
+        assertEquals(20, tapok.getMaxStation());
+    }
+
+    @Test
+    void setNewVolumeLimits() {
+        Radio tapok = new Radio(20, 200);
+
+        assertEquals(200, tapok.getMaxVolume());
     }
 }
