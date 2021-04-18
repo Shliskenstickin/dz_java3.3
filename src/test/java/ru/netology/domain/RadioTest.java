@@ -101,14 +101,14 @@ class RadioTest {
 
     @Test
     void setNewStationLimits() {
-        Radio tapok = new Radio(20,200);
+        Radio tapok = new Radio(20, 200);
 
         assertEquals(20, tapok.getMaxStation());
     }
 
     @Test
     void setNewVolumeLimits() {
-        Radio tapok = new Radio(20,200);
+        Radio tapok = new Radio(20, 200);
 
         assertEquals(200, tapok.getMaxVolume());
     }

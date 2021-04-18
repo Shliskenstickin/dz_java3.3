@@ -1,5 +1,11 @@
 package ru.netology.domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@Data
+
 public class Radio {
     private int numberStation;
     private int soundVolume;
@@ -11,25 +17,6 @@ public class Radio {
     public Radio(int maxStation, int maxVolume) {
         this.maxStation = maxStation;
         this.maxVolume = maxVolume;
-    }
-
-    public Radio() {
-    }
-
-    public int getNumberStation() {
-        return numberStation;
-    }
-
-    public int getSoundVolume() {
-        return soundVolume;
-    }
-
-    public int getMaxStation() {
-        return maxStation;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
     }
 
     public void setNumberStation(int numberStation) {
